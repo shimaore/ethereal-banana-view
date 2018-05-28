@@ -1,6 +1,6 @@
 {
   "name": "ethereal-banana-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "FreeSwitch CDRs views for CCNQ4",
   "main": "index.js",
   "browser": "index.bundle.js",
