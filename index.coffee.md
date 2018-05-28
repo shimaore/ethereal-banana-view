@@ -29,7 +29,8 @@ Current views
       extra = ''
       extra = "var normalize_account = #{options.normalize_account};" if options.normalize_account?
 
-      {stats,count} = require('./main') options
+      stats = require('./stats') options
+      count = require('./count') options
 
       _id: "_design/#{app}"
       version: version
