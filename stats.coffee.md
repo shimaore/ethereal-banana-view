@@ -73,7 +73,7 @@ On the client-side this will often be `sbc`; on the carrier-side it should be so
           emit [ {profile,direction}, parts... ], billsec
           emit [ {profile,direction}, 'waitmsec', parts... ], waitmsec
           if billsec is 0
-            emit [ {profile}, 'zero', pars... ], waitmsec
+            emit [ {profile}, 'zero', parts... ], waitmsec
 
           emit [ {profile,direction}, 'billmsec', parts... ], parseInt variables.billmsec, 10
           emit [ {profile,direction}, 'progressmsec', parts... ], progressmsec = parseInt variables.progressmsec, 10
