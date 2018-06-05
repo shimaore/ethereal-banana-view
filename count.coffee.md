@@ -13,10 +13,12 @@ For this map the reduce function is `_count`:
         direction = variables.ccnq_direction
         account = variables.ccnq_account
 
-        if number = variables.ccnq_from_e164?
+        number = variables.ccnq_from_e164
+        if number?
           emit [ {number}, 'xref', parts... ], {xref}
           emit [ {number,direction}, parts... ], {xref}
-        if number = variables.ccnq_to_e164?
+        number = variables.ccnq_to_e164
+        if number?
           emit [ {number}, parts... ], {xref}
           emit [ {number,direction}, parts... ], {xref}
 
