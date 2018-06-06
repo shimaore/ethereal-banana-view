@@ -6,7 +6,7 @@ For this map the reduce function is `_stats`:
         return unless variables?
         {start_stamp,billsec} = variables
         parts = start_stamp
-          .split /[- :]/
+          .split(/[- :]/)[0..3]
           .map (x) -> parseInt x, 10
         billsec = parseInt billsec, 10, 10
         return if isNaN billsec
@@ -19,49 +19,49 @@ For this map the reduce function is `_stats`:
 System-wide stats
 
         emit parts, billsec
-        emit [ {direction}, parts... ], billsec
+        emit [ {d:direction}, parts... ], billsec
 
         waitmsec = parseInt variables.waitmsec, 10
         if billsec is 0
-          emit [ 'zero', parts... ], waitmsec
+          emit [ 'z', parts... ], waitmsec
 
 By-call
 
         if xref?
-          emit [ {xref}, parts... ], billsec
+          emit [ {x:xref}, parts... ], billsec
 
 By-number
 
         number = variables.ccnq_from_e164
         if number?
-          emit [ {number}, parts... ], billsec
-          emit [ {number,direction}, parts... ], billsec
+          emit [ {n:number}, parts... ], billsec
+          emit [ {n:number,d:direction}, parts... ], billsec
           if billsec is 0
-            emit [ {number}, 'zero', parts... ], waitmsec
+            emit [ {n:number}, 'zero', parts... ], waitmsec
         number = variables.ccnq_to_e164
         if number?
-          emit [ {number}, parts... ], billsec
-          emit [ {number,direction}, parts... ], billsec
+          emit [ {n:number}, parts... ], billsec
+          emit [ {n:number,d:direction}, parts... ], billsec
           if billsec is 0
-            emit [ {number}, 'zero', parts... ], waitmsec
+            emit [ {n:number}, 'z', parts... ], waitmsec
 
 By-endpoint
 
         endpoint = variables.ccnq_endpoint
         inbound = callStats?.audio?.inbound
         if endpoint?
-          emit [ {endpoint}, parts... ], billsec
-          emit [ {endpoint,direction}, parts... ], billsec
+          emit [ {e:endpoint}, parts... ], billsec
+          emit [ {e:endpoint,d:direction}, parts... ], billsec
           if inbound?
-            emit [ {endpoint,direction}, 'mos', parts... ], inbound.mos
-            emit [ {endpoint,direction}, 'skip_packet_count', parts... ], inbound.skip_packet_count
-            emit [ {endpoint,direction}, 'jitter_packet_count', parts... ], inbound.jitter_packet_count
+            emit [ {e:endpoint,d:direction}, 'm', parts... ], inbound.mos
+            emit [ {e:endpoint,d:direction}, 's', parts... ], inbound.skip_packet_count
+            emit [ {e:endpoint,d:direction}, 'j', parts... ], inbound.jitter_packet_count
 
 By-account
 
         if account?
-          emit [ {account}, parts... ], billsec
-          emit [ {account,direction}, parts... ], billsec
+          emit [ {a:account}, parts... ], billsec
+          emit [ {a:account,d:direction}, parts... ], billsec
 
 By-"carrier"
 
@@ -69,14 +69,14 @@ On the client-side this will often be `sbc`; on the carrier-side it should be so
 
         profile = variables.ccnq_profile
         if profile?
-          emit [ {profile}, parts... ], billsec
-          emit [ {profile,direction}, parts... ], billsec
-          emit [ {profile,direction}, 'waitmsec', parts... ], waitmsec
+          emit [ {p:profile}, parts... ], billsec
+          emit [ {p:profile,d:direction}, parts... ], billsec
+          emit [ {p:profile,d:direction}, 'w', parts... ], waitmsec
           if billsec is 0
-            emit [ {profile}, 'zero', parts... ], waitmsec
+            emit [ {p:profile}, 'z', parts... ], waitmsec
 
-          emit [ {profile,direction}, 'billmsec', parts... ], parseInt variables.billmsec, 10
-          emit [ {profile,direction}, 'progressmsec', parts... ], progressmsec = parseInt variables.progressmsec, 10
-          emit [ {profile,direction}, 'answermsec', parts... ], parseInt variables.answermsec, 10
+          emit [ {p:profile,d:direction}, 'b', parts... ], parseInt variables.billmsec, 10
+          emit [ {p:profile,d:direction}, 'p', parts... ], progressmsec = parseInt variables.progressmsec, 10
+          emit [ {p:profile,d:direction}, 'a', parts... ], parseInt variables.answermsec, 10
 
         return
