@@ -1,7 +1,5 @@
     module.exports = ({normalize_account,emit}) ->
 
-      skip = ->
-
 For this map the reduce function is `_stats`:
 
       ({variables,callStats}) ->
@@ -17,6 +15,8 @@ For this map the reduce function is `_stats`:
         direction = variables.ccnq_direction
         account = variables.ccnq_account
         account = normalize_account account if account? and normalize_account?
+
+        skip = ->
 
 System-wide stats
 

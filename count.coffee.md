@@ -1,7 +1,5 @@
     module.exports = ({normalize_account,emit}) ->
 
-      skip = ->
-
 For this map the reduce function is `_count`:
 
       ({variables}) ->
@@ -14,6 +12,8 @@ For this map the reduce function is `_count`:
         xref = variables.session_reference
         direction = variables.ccnq_direction
         account = variables.ccnq_account
+
+        skip = ->
 
         number = variables.ccnq_from_e164
         if number?
