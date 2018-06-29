@@ -1,5 +1,7 @@
     module.exports = ({normalize_account,emit}) ->
 
+      skip = ->
+
 For this map the reduce function is `_stats`:
 
       ({variables,callStats}) ->
@@ -18,50 +20,50 @@ For this map the reduce function is `_stats`:
 
 System-wide stats
 
-        emit parts, billsec
-        emit [ {d:direction}, parts... ], billsec
+        skip parts, billsec
+        skip [ {d:direction}, parts... ], billsec
 
         waitmsec = parseInt variables.waitmsec, 10
         if billsec is 0
-          emit [ 'z', parts... ], waitmsec
+          skip [ 'z', parts... ], waitmsec
 
 By-call
 
         if xref?
-          emit [ {x:xref}, parts... ], billsec
+          skip [ {x:xref}, parts... ], billsec
 
 By-number
 
         number = variables.ccnq_from_e164
         if number?
-          emit [ {n:number}, parts... ], billsec
-          emit [ {n:number,d:direction}, parts... ], billsec
+          skip [ {n:number}, parts... ], billsec
+          skip [ {n:number,d:direction}, parts... ], billsec
           if billsec is 0
-            emit [ {n:number}, 'zero', parts... ], waitmsec
+            skip [ {n:number}, 'z', parts... ], waitmsec
         number = variables.ccnq_to_e164
         if number?
-          emit [ {n:number}, parts... ], billsec
-          emit [ {n:number,d:direction}, parts... ], billsec
+          skip [ {n:number}, parts... ], billsec
+          skip [ {n:number,d:direction}, parts... ], billsec
           if billsec is 0
-            emit [ {n:number}, 'z', parts... ], waitmsec
+            skip [ {n:number}, 'z', parts... ], waitmsec
 
 By-endpoint
 
         endpoint = variables.ccnq_endpoint
         inbound = callStats?.audio?.inbound
         if endpoint?
-          emit [ {e:endpoint}, parts... ], billsec
-          emit [ {e:endpoint,d:direction}, parts... ], billsec
+          skip [ {e:endpoint}, parts... ], billsec
+          skip [ {e:endpoint,d:direction}, parts... ], billsec
           if inbound?
-            emit [ {e:endpoint,d:direction}, 'm', parts... ], inbound.mos
-            emit [ {e:endpoint,d:direction}, 's', parts... ], inbound.skip_packet_count
-            emit [ {e:endpoint,d:direction}, 'j', parts... ], inbound.jitter_packet_count
+            skip [ {e:endpoint,d:direction}, 'm', parts... ], inbound.mos
+            skip [ {e:endpoint,d:direction}, 's', parts... ], inbound.skip_packet_count
+            skip [ {e:endpoint,d:direction}, 'j', parts... ], inbound.jitter_packet_count
 
 By-account
 
         if account?
-          emit [ {a:account}, parts... ], billsec
-          emit [ {a:account,d:direction}, parts... ], billsec
+          skip [ {a:account}, parts... ], billsec
+          skip [ {a:account,d:direction}, parts... ], billsec
 
 By-"carrier"
 
@@ -69,14 +71,14 @@ On the client-side this will often be `sbc`; on the carrier-side it should be so
 
         profile = variables.ccnq_profile
         if profile?
-          emit [ {p:profile}, parts... ], billsec
-          emit [ {p:profile,d:direction}, parts... ], billsec
-          emit [ {p:profile,d:direction}, 'w', parts... ], waitmsec
+          skip [ {p:profile}, parts... ], billsec
+          skip [ {p:profile,d:direction}, parts... ], billsec
+          skip [ {p:profile,d:direction}, 'w', parts... ], waitmsec
           if billsec is 0
-            emit [ {p:profile}, 'z', parts... ], waitmsec
+            skip [ {p:profile}, 'z', parts... ], waitmsec
 
-          emit [ {p:profile,d:direction}, 'b', parts... ], parseInt variables.billmsec, 10
-          emit [ {p:profile,d:direction}, 'p', parts... ], progressmsec = parseInt variables.progressmsec, 10
-          emit [ {p:profile,d:direction}, 'a', parts... ], parseInt variables.answermsec, 10
+          skip [ {p:profile,d:direction}, 'b', parts... ], parseInt variables.billmsec, 10
+          skip [ {p:profile,d:direction}, 'p', parts... ], progressmsec = parseInt variables.progressmsec, 10
+          skip [ {p:profile,d:direction}, 'a', parts... ], parseInt variables.answermsec, 10
 
         return

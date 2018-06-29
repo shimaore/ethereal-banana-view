@@ -1,5 +1,7 @@
     module.exports = ({normalize_account,emit}) ->
 
+      skip = ->
+
 For this map the reduce function is `_count`:
 
       ({variables}) ->
@@ -15,11 +17,13 @@ For this map the reduce function is `_count`:
 
         number = variables.ccnq_from_e164
         if number?
-          emit [ {n:number}, 'x', parts... ], {xref}
-          emit [ {n:number,d:direction}, parts... ], {xref}
+          emit [ number, start_stamp ] # legacy
+          skip [ {n:number}, 'x', parts... ], {xref}
+          skip [ {n:number,d:direction}, parts... ], {xref}
         number = variables.ccnq_to_e164
         if number?
-          emit [ {n:number}, 'x', parts... ], {xref}
-          emit [ {n:number,d:direction}, parts... ], {xref}
+          emit [ number, start_stamp ] # legacy
+          skip [ {n:number}, 'x', parts... ], {xref}
+          skip [ {n:number,d:direction}, parts... ], {xref}
 
         return
