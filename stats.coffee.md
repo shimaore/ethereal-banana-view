@@ -8,7 +8,7 @@ For this map the reduce function is `_stats`:
         parts = start_stamp
           .split(/[- :]/)[0..3]
           .map (x) -> parseInt x, 10
-        billsec = parseInt billsec, 10, 10
+        billsec = parseInt billsec, 10
         return if isNaN billsec
 
         xref = variables.session_reference
@@ -36,12 +36,14 @@ By-number
 
         number = variables.ccnq_from_e164
         if number?
+          emit [ number, start_stamp ], billsec # legacy
           skip [ {n:number}, parts... ], billsec
           skip [ {n:number,d:direction}, parts... ], billsec
           if billsec is 0
             skip [ {n:number}, 'z', parts... ], waitmsec
         number = variables.ccnq_to_e164
         if number?
+          emit [ number, start_stamp ], billsec # legacy
           skip [ {n:number}, parts... ], billsec
           skip [ {n:number,d:direction}, parts... ], billsec
           if billsec is 0

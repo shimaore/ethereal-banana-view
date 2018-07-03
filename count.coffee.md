@@ -15,14 +15,14 @@ For this map the reduce function is `_count`:
 
         skip = ->
 
+By-number
+
         number = variables.ccnq_from_e164
         if number?
-          emit [ number, start_stamp ] # legacy
           skip [ {n:number}, 'x', parts... ], {xref}
           skip [ {n:number,d:direction}, parts... ], {xref}
         number = variables.ccnq_to_e164
         if number?
-          emit [ number, start_stamp ] # legacy
           skip [ {n:number}, 'x', parts... ], {xref}
           skip [ {n:number,d:direction}, parts... ], {xref}
 
