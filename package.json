@@ -6,7 +6,7 @@
   "browser": "index.bundle.js",
   "scripts": {
     "prepublishOnly": "npm install && rm package-lock.json && npm run build",
-    "build": "coffee --no-header -c *.coffee.md && node -e 'console.log(JSON.stringify(require(\"./index\").couchapp()))' > main.json",
+    "build": "coffee --no-header -c *.coffee.md",
     "pretest": "npm install &&  coffee -c test/*.coffee.md && npm run build",
     "test": "mocha"
   },
