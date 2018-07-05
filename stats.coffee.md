@@ -55,7 +55,7 @@ By-endpoint
         inbound = callStats?.audio?.inbound
         if endpoint?
           skip [ {e:endpoint}, parts... ], billsec
-          skip [ {e:endpoint,d:direction}, parts... ], billsec
+          emit [ {e:endpoint,d:direction}, parts... ], billsec
           if inbound?
             skip [ {e:endpoint,d:direction}, 'm', parts... ], inbound.mos
             skip [ {e:endpoint,d:direction}, 's', parts... ], inbound.skip_packet_count
