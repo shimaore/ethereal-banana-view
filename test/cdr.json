@@ -1,0 +1,530 @@
+{
+   "_id": "ff95e8b98b00de17f27a776626ff48be",
+   "_rev": "1-4955c3efd2901cc49bffa581ce48dacf",
+   "core-uuid": "98baeafb-2f7f-48e9-99ac-5d57b7262d79",
+   "switchname": "freeswitch-server@phone-regclient-02r.private.phone.kwaoo.net",
+   "channel_data": {
+       "state": "CS_REPORTING",
+       "direction": "inbound",
+       "state_number": "11",
+       "flags": "0=1;3=1;20=1;37=1;38=1;40=1;53=1;58=1;59=1;112=1;113=1;122=1;159=1",
+       "caps": "1=1;2=1;3=1;4=1;5=1;6=1;8=1;9=1"
+   },
+   "callStats": {
+       "audio": {
+           "inbound": {
+               "raw_bytes": 0,
+               "media_bytes": 0,
+               "packet_count": 0,
+               "media_packet_count": 0,
+               "skip_packet_count": 52,
+               "jitter_packet_count": 0,
+               "dtmf_packet_count": 0,
+               "cng_packet_count": 0,
+               "flush_packet_count": 0,
+               "largest_jb_size": 0,
+               "jitter_min_variance": 0,
+               "jitter_max_variance": 0,
+               "jitter_loss_rate": 0,
+               "jitter_burst_rate": 0,
+               "mean_interval": 0,
+               "flaw_total": 0,
+               "quality_percentage": 100,
+               "mos": 4.5
+           },
+           "outbound": {
+               "raw_bytes": 0,
+               "media_bytes": 0,
+               "packet_count": 0,
+               "media_packet_count": 0,
+               "skip_packet_count": 0,
+               "dtmf_packet_count": 0,
+               "cng_packet_count": 0,
+               "rtcp_packet_count": 0,
+               "rtcp_octet_count": 0
+           }
+       }
+   },
+   "variables": {
+       "direction": "inbound",
+       "uuid": "34316752621eb01c0e28d3074ac72b5a@b.phone.kwaoo.net",
+       "session_id": "270961",
+       "sip_from_user": "0972000000",
+       "sip_from_uri": "0972000000@b.phone.kwaoo.net",
+       "sip_from_host": "b.phone.kwaoo.net",
+       "video_media_flow": "disabled",
+       "text_media_flow": "disabled",
+       "channel_name": "sofia/huge-play-sbc-egress/0972000000@b.phone.kwaoo.net",
+       "sip_call_id": "34316752621eb01c0e28d3074ac72b5a@b.phone.kwaoo.net",
+       "sip_local_network_addr": "172.30.209.57",
+       "sip_network_ip": "172.30.209.55",
+       "sip_network_port": "5062",
+       "sip_invite_stamp": "1507024224403378",
+       "sip_received_ip": "172.30.209.55",
+       "sip_received_port": "5062",
+       "sip_via_protocol": "udp",
+       "sip_from_user_stripped": "0972000000",
+       "sip_from_tag": "as5ca194c9",
+       "sofia_profile_name": "huge-play-sbc-egress",
+       "recovery_profile_name": "huge-play-sbc-egress",
+       "sip_invite_route_uri": "<sip:172.30.209.55:5062;lr;ftag=as5ca194c9;dlg=6ff.b29cdad7>",
+       "sip_invite_record_route": "<sip:172.30.209.55:5062;lr;ftag=as5ca194c9;dlg=6ff.b29cdad7>",
+       "sip_full_via": "SIP/2.0/UDP 172.30.209.55:5062;branch=z9hG4bK7ce7.a4b09727.0,SIP/2.0/UDP 172.16.1.2:5060;received=172.16.1.2;branch=z9hG4bK43083d15;rport=5060",
+       "sip_from_display": "0972000000",
+       "sip_full_from": "\"0972000000\" <sip:0972111111@b.phone.kwaoo.net>;tag=as5ca194c9",
+       "sip_full_to": "<sip:072000000@b.phone.kwaoo.net:5062>",
+       "sip_allow": "INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH",
+       "sip_req_user": "072000000",
+       "sip_req_port": "5062",
+       "sip_req_uri": "072000000@b.phone.kwaoo.net:5062",
+       "sip_req_host": "b.phone.kwaoo.net",
+       "sip_to_user": "072000000",
+       "sip_to_port": "5062",
+       "sip_to_uri": "072000000@b.phone.kwaoo.net:5062",
+       "sip_to_host": "b.phone.kwaoo.net",
+       "sip_contact_port": "5060",
+       "sip_contact_uri": "0972000000@172.16.1.2:5060",
+       "sip_contact_host": "172.16.1.2",
+       "sip_user_agent": "ICOTERA i4600 (1.10.0)",
+       "sip_via_host": "172.30.209.55",
+       "sip_via_port": "5062",
+       "max_forwards": "69",
+       "sip_h_P-Charge-Info": "sip:knet_0972000000_9408_108937_189_81728@b.phone.kwaoo.net",
+       "sip_h_X-Ex": "udp 172.16.1.2 5060 -> 172.30.209.55 5062 0972000000@a.phone.kwaoo.net 0972111111 <null> b.phone.kwaoo.net 34316752621eb01c0e28d3074ac72b5a@b.phone.kwaoo.net sip:072000000@b.phone.kwaoo.net:5062 sip:0972111111@b.phone.kwaoo.net sip:072000000@b.phone.kwaoo.net:5062 ICOTERA i4600 (1.10.0)",
+       "switch_r_sdp": "v=0\r\no=root 1350369193 1350369194 IN IP4 172.16.1.2\r\ns=Asterisk PBX 1.8.25.0-rc1\r\nc=IN IP4 185.97.103.190\r\nt=0 0\r\nm=audio 49240 RTP/AVP 8 101\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:101 telephone-event/8000\r\na=fmtp:101 0-16\r\na=silenceSupp:off - - - -\r\na=ptime:20\r\n",
+       "ep_codec_string": "CORE_PCM_MODULE.PCMA@8000h@20i@64000b,CORE_PCM_MODULE.PCMA@8000h@20i@64000b",
+       "call_uuid": "34316752621eb01c0e28d3074ac72b5a@b.phone.kwaoo.net",
+       "socket_host": "127.0.0.1",
+       "session_reference": "GzsyOktTH",
+       "sip_redirect_profile": "sbc",
+       "sip_redirect_context": "sbc-transfer-GzsyOktTH",
+       "sip_redirect_dialplan": "inline:'socket:127.0.0.1:5721 async full'",
+       "sip_redirect_contact_params": "xref=GzsyOktTH",
+       "sip_invite_params": "xref=GzsyOktTH",
+       "sip_invite_to_params": "xref=GzsyOktTH",
+       "sip_invite_contact_params": "xref=GzsyOktTH",
+       "sip_invite_from_params": "xref=GzsyOktTH",
+       "ccnq_endpoint": "0972000000@a.phone.kwaoo.net",
+       "ignore_sdp_ice": "true",
+       "ccnq_direction": "egress",
+       "ccnq_account": "knet_0972000000_9408_108937_189_81728",
+       "ccnq_profile": "sbc",
+       "ccnq_from_e164": "33972000000",
+       "ccnq_to_e164": "3372000000",
+       "progress_timeout": "18",
+       "call_timeout": "300",
+       "sip_contact_user": "33972000000",
+       "sip_cid_type": "pid",
+       "inherit_codec": "true",
+       "t38_passthru": "true",
+       "hold_music": "tone_stream://%(300,10000,440);loops=-1",
+       "effective_caller_id_number": "33169000000",
+       "initial_callee_id_name": "France",
+       "origination_callee_id_name": "France",
+       "sip_h_X-At": "{\"cdr\":\"116046_140_1250_0.2_0_0_0_1\"}",
+       "ccnq_attrs": "{\"cdr\":\"116046_140_1250_0.2_0_0_0_1\"}",
+       "continue_on_fail": "true",
+       "export_vars": "session_reference,sip_redirect_profile,sip_redirect_context,sip_redirect_dialplan,sip_redirect_contact_params,sip_invite_params,sip_invite_to_params,sip_invite_contact_params,sip_invite_from_params,t38_passthru,sip_wait_for_aleg_ack,hold_music,sip_wait_for_aleg_ack",
+       "sip_wait_for_aleg_ack": "true",
+       "force_transfer_context": "sbc-handled-GzsyOktTH",
+       "originated_legs": "ARRAY::4a6f7f43-2d0a-4ad3-a003-e67b7528db44;Outbound Call;3372000000|:99036cfe-9a76-43ad-b9c5-e2efea107908;Outbound Call;3372000000",
+       "sip_rh_X-Asterisk-HangupCause": "Unallocated (unassigned) number",
+       "sip_rh_X-Asterisk-HangupCauseCode": "1",
+       "originate_causes": "ARRAY::4a6f7f43-2d0a-4ad3-a003-e67b7528db44;NORMAL_TEMPORARY_FAILURE|:99036cfe-9a76-43ad-b9c5-e2efea107908;UNALLOCATED_NUMBER",
+       "originate_signal_bond": "99036cfe-9a76-43ad-b9c5-e2efea107908",
+       "sip_to_tag": "HeUH4vHZUc2vr",
+       "sip_invite_failure_status": "404",
+       "sip_invite_failure_phrase": "Not Found",
+       "sip_hangup_phrase": "Not Found",
+       "last_bridge_hangup_cause": "UNALLOCATED_NUMBER",
+       "last_bridge_proto_specific_hangup_cause": "sip:404",
+       "originate_disposition": "UNALLOCATED_NUMBER",
+       "DIALSTATUS": "UNALLOCATED_NUMBER",
+       "originate_failed_cause": "UNALLOCATED_NUMBER",
+       "sip_ignore_remote_cause": "true",
+       "rtp_use_codec_string": "CLEARMODE,OPUS@48000h,OPUS@24000h,OPUS@16000h,G722,OPUS,PCMA@20i,PCMA@30i,VP8",
+       "remote_audio_media_flow": "sendrecv",
+       "audio_media_flow": "sendrecv",
+       "rtp_audio_recv_pt": "8",
+       "rtp_use_codec_name": "PCMA",
+       "rtp_use_codec_rate": "8000",
+       "rtp_use_codec_ptime": "20",
+       "rtp_use_codec_channels": "1",
+       "rtp_last_audio_codec_string": "PCMA@8000h@20i@1c",
+       "read_codec": "PCMA",
+       "original_read_codec": "PCMA",
+       "read_rate": "8000",
+       "original_read_rate": "8000",
+       "write_codec": "PCMA",
+       "write_rate": "8000",
+       "dtmf_type": "rfc2833",
+       "local_media_ip": "172.30.209.57",
+       "local_media_port": "59732",
+       "advertised_media_ip": "172.30.209.57",
+       "rtp_use_timer_name": "soft",
+       "rtp_use_pt": "8",
+       "rtp_use_ssrc": "771850328",
+       "rtp_2833_send_payload": "101",
+       "rtp_2833_recv_payload": "101",
+       "remote_media_ip": "172.16.1.2",
+       "remote_media_port": "49240",
+       "endpoint_disposition": "EARLY MEDIA",
+       "rtp_local_sdp_str": "v=0\r\no=huge-play-sbc-egress 1506964517 1506964518 IN IP4 172.30.209.57\r\ns=huge-play-sbc-egress\r\nc=IN IP4 172.30.209.57\r\nt=0 0\r\nm=audio 59732 RTP/AVP 8 101\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:101 telephone-event/8000\r\na=fmtp:101 0-16\r\na=ptime:20\r\na=sendrecv\r\n",
+       "current_application_data": "486",
+       "current_application": "respond",
+       "hangup_cause": "USER_BUSY",
+       "hangup_cause_q850": "17",
+       "digits_dialed": "none",
+       "start_stamp": "2017-10-03 11:50:24",
+       "profile_start_stamp": "2017-10-03 11:50:24",
+       "progress_stamp": "2017-10-03 11:50:28",
+       "progress_media_stamp": "2017-10-03 11:50:49",
+       "end_stamp": "2017-10-03 11:50:50",
+       "start_epoch": "1507024224",
+       "start_uepoch": "1507024224403378",
+       "profile_start_epoch": "1507024224",
+       "profile_start_uepoch": "1507024224403378",
+       "answer_epoch": "0",
+       "answer_uepoch": "0",
+       "bridge_epoch": "0",
+       "bridge_uepoch": "0",
+       "last_hold_epoch": "0",
+       "last_hold_uepoch": "0",
+       "hold_accum_seconds": "0",
+       "hold_accum_usec": "0",
+       "hold_accum_ms": "0",
+       "resurrect_epoch": "0",
+       "resurrect_uepoch": "0",
+       "progress_epoch": "1507024228",
+       "progress_uepoch": "1507024228543402",
+       "progress_media_epoch": "1507024249",
+       "progress_media_uepoch": "1507024249253364",
+       "end_epoch": "1507024250",
+       "end_uepoch": "1507024250293358",
+       "last_app": "respond",
+       "last_arg": "486",
+       "caller_id": "\"0972000000\" <0972111111>",
+       "duration": "26",
+       "billsec": "78",
+       "progresssec": "4",
+       "answersec": "0",
+       "waitsec": "0",
+       "progress_mediasec": "25",
+       "flow_billsec": "0",
+       "mduration": "25890",
+       "billmsec": "78128",
+       "progressmsec": "4140",
+       "answermsec": "0",
+       "waitmsec": "0",
+       "progress_mediamsec": "24850",
+       "flow_billmsec": "0",
+       "uduration": "25889980",
+       "billusec": "78128321",
+       "progressusec": "4140024",
+       "answerusec": "0",
+       "waitusec": "0",
+       "progress_mediausec": "24849986",
+       "flow_billusec": "0",
+       "sip_hangup_disposition": "send_refuse",
+       "rtp_audio_in_raw_bytes": "0",
+       "rtp_audio_in_media_bytes": "0",
+       "rtp_audio_in_packet_count": "0",
+       "rtp_audio_in_media_packet_count": "0",
+       "rtp_audio_in_skip_packet_count": "52",
+       "rtp_audio_in_jitter_packet_count": "0",
+       "rtp_audio_in_dtmf_packet_count": "0",
+       "rtp_audio_in_cng_packet_count": "0",
+       "rtp_audio_in_flush_packet_count": "0",
+       "rtp_audio_in_largest_jb_size": "0",
+       "rtp_audio_in_jitter_min_variance": "0.00",
+       "rtp_audio_in_jitter_max_variance": "0.00",
+       "rtp_audio_in_jitter_loss_rate": "0.00",
+       "rtp_audio_in_jitter_burst_rate": "0.00",
+       "rtp_audio_in_mean_interval": "0.00",
+       "rtp_audio_in_flaw_total": "0",
+       "rtp_audio_in_quality_percentage": "100.00",
+       "rtp_audio_in_mos": "4.50",
+       "rtp_audio_out_raw_bytes": "0",
+       "rtp_audio_out_media_bytes": "0",
+       "rtp_audio_out_packet_count": "0",
+       "rtp_audio_out_media_packet_count": "0",
+       "rtp_audio_out_skip_packet_count": "0",
+       "rtp_audio_out_dtmf_packet_count": "0",
+       "rtp_audio_out_cng_packet_count": "0",
+       "rtp_audio_rtcp_packet_count": "0",
+       "rtp_audio_rtcp_octet_count": "0"
+   },
+   "app_log": {
+       "applications": [
+           {
+               "app_name": "socket",
+               "app_data": "127.0.0.1:5721 async full",
+               "app_stamp": "1507024224407590"
+           },
+           {
+               "app_name": "set",
+               "app_data": "session_reference=GzsyOktTH",
+               "app_stamp": "1507024224432888"
+           },
+           {
+               "app_name": "set",
+               "app_data": "force_transfer_context=sbc-transfer-GzsyOktTH",
+               "app_stamp": "1507024224453483"
+           },
+           {
+               "app_name": "export",
+               "app_data": "session_reference=GzsyOktTH",
+               "app_stamp": "1507024224474451"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_redirect_profile=sbc",
+               "app_stamp": "1507024224494923"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_redirect_context=sbc-transfer-GzsyOktTH",
+               "app_stamp": "1507024224515558"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_redirect_dialplan=inline:'socket:127.0.0.1:5721 async full'",
+               "app_stamp": "1507024224538998"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_redirect_contact_params=xref=GzsyOktTH",
+               "app_stamp": "1507024224559434"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_invite_params=xref=GzsyOktTH",
+               "app_stamp": "1507024224579828"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_invite_to_params=xref=GzsyOktTH",
+               "app_stamp": "1507024224600243"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_invite_contact_params=xref=GzsyOktTH",
+               "app_stamp": "1507024224620681"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_invite_from_params=xref=GzsyOktTH",
+               "app_stamp": "1507024224661378"
+           },
+           {
+               "app_name": "unset",
+               "app_data": "sip_h_X-En",
+               "app_stamp": "1507024224681801"
+           },
+           {
+               "app_name": "set",
+               "app_data": "ccnq_endpoint=0972000000@a.phone.kwaoo.net",
+               "app_stamp": "1507024224702366"
+           },
+           {
+               "app_name": "privacy",
+               "app_data": "no",
+               "app_stamp": "1507024224722792"
+           },
+           {
+               "app_name": "set",
+               "app_data": "ignore_sdp_ice=true",
+               "app_stamp": "1507024224743545"
+           },
+           {
+               "app_name": "set",
+               "app_data": "ccnq_direction=egress",
+               "app_stamp": "1507024224785058"
+           },
+           {
+               "app_name": "set",
+               "app_data": "ccnq_account=knet_0972000000_9408_108937_189_81728",
+               "app_stamp": "1507024224805503"
+           },
+           {
+               "app_name": "set",
+               "app_data": "ccnq_profile=sbc",
+               "app_stamp": "1507024224825905"
+           },
+           {
+               "app_name": "set",
+               "app_data": "ccnq_from_e164=33972000000",
+               "app_stamp": "1507024224846288"
+           },
+           {
+               "app_name": "set",
+               "app_data": "ccnq_to_e164=3372000000",
+               "app_stamp": "1507024224866651"
+           },
+           {
+               "app_name": "set",
+               "app_data": "progress_timeout=18",
+               "app_stamp": "1507024224887084"
+           },
+           {
+               "app_name": "set",
+               "app_data": "call_timeout=300",
+               "app_stamp": "1507024224907506"
+           },
+           {
+               "app_name": "set",
+               "app_data": "effective_caller_id_number=33972000000",
+               "app_stamp": "1507024224927961"
+           },
+           {
+               "app_name": "set",
+               "app_data": "sip_contact_user=33972000000",
+               "app_stamp": "1507024224948489"
+           },
+           {
+               "app_name": "set",
+               "app_data": "sip_cid_type=pid",
+               "app_stamp": "1507024224968870"
+           },
+           {
+               "app_name": "set",
+               "app_data": "inherit_codec=true",
+               "app_stamp": "1507024224989248"
+           },
+           {
+               "app_name": "export",
+               "app_data": "t38_passthru=true",
+               "app_stamp": "1507024225029711"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_wait_for_aleg_ack=true",
+               "app_stamp": "1507024225050059"
+           },
+           {
+               "app_name": "export",
+               "app_data": "hold_music=tone_stream://%(300,10000,440);loops=-1",
+               "app_stamp": "1507024225070422"
+           },
+           {
+               "app_name": "set",
+               "app_data": "effective_caller_id_number=33169000000",
+               "app_stamp": "1507024225090807"
+           },
+           {
+               "app_name": "set",
+               "app_data": "initial_callee_id_name=France",
+               "app_stamp": "1507024225111407"
+           },
+           {
+               "app_name": "set",
+               "app_data": "origination_callee_id_name=France",
+               "app_stamp": "1507024225133574"
+           },
+           {
+               "app_name": "set",
+               "app_data": "sip_h_X-At={\"cdr\":\"116046_140_1250_0.2_0_0_0_1\"}",
+               "app_stamp": "1507024225235146"
+           },
+           {
+               "app_name": "set",
+               "app_data": "ccnq_attrs={\"cdr\":\"116046_140_1250_0.2_0_0_0_1\"}",
+               "app_stamp": "1507024225255537"
+           },
+           {
+               "app_name": "set",
+               "app_data": "continue_on_fail=true",
+               "app_stamp": "1507024225275938"
+           },
+           {
+               "app_name": "export",
+               "app_data": "sip_wait_for_aleg_ack=true",
+               "app_stamp": "1507024225296944"
+           },
+           {
+               "app_name": "set",
+               "app_data": "sip_wait_for_aleg_ack=true",
+               "app_stamp": "1507024225317327"
+           },
+           {
+               "app_name": "set",
+               "app_data": "force_transfer_context=sbc-handled-GzsyOktTH",
+               "app_stamp": "1507024225337689"
+           },
+           {
+               "app_name": "bridge",
+               "app_data": "{}[leg_progress_timeout=12,leg_timeout=90,sofia_session_timeout=28800,absolute_codec_string=PCMA]sofia/huge-play-sbc-ingress/sip:3372000000@172.30.209.52:15216",
+               "app_stamp": "1507024225378158"
+           },
+           {
+               "app_name": "bridge",
+               "app_data": "{}[absolute_codec_string=PCMA,sip_h_X-RP=1e2U71aZii,sip_h_X-RU=0033972000000,sip_h_X-RR=sip.fr.eu,sip_h_X-RT=sipfr.k-net.fr,sip_h_X-RH=172.30.209.53:5095]sofia/huge-play-sbc-ingress/sip:3372000000@172.30.209.53:15204",
+               "app_stamp": "1507024227415199"
+           },
+           {
+               "app_name": "set",
+               "app_data": "sip_ignore_remote_cause=true",
+               "app_stamp": "1507024249235656"
+           },
+           {
+               "app_name": "pre_answer",
+               "app_data": "",
+               "app_stamp": "1507024249256651"
+           },
+           {
+               "app_name": "sleep",
+               "app_data": "1000",
+               "app_stamp": "1507024249277902"
+           },
+           {
+               "app_name": "respond",
+               "app_data": "486",
+               "app_stamp": "1507024250297846"
+           }
+       ]
+   },
+   "callflow": [
+       {
+           "dialplan": "inline:'socket:127.0.0.1:5721 async full'",
+           "profile_index": "1",
+           "extension": {
+               "name": "inline",
+               "number": "inline",
+               "applications": [
+                   {
+                       "app_name": "socket",
+                       "app_data": "127.0.0.1:5721 async full"
+                   }
+               ]
+           },
+           "caller_profile": {
+               "username": "0972000000",
+               "dialplan": "inline:'socket:127.0.0.1:5721 async full'",
+               "caller_id_name": "0972000000",
+               "ani": "0972000000",
+               "aniii": "",
+               "caller_id_number": "0972000000",
+               "network_addr": "172.30.209.55",
+               "rdnis": "",
+               "destination_number": "",
+               "uuid": "34316752621eb01c0e28d3074ac72b5a@b.phone.kwaoo.net",
+               "source": "mod_sofia",
+               "context": "sbc-egress",
+               "chan_name": "sofia/huge-play-sbc-egress/0972000000@b.phone.kwaoo.net"
+           },
+           "times": {
+               "created_time": "1507024224403378",
+               "profile_created_time": "1507024224403378",
+               "progress_time": "1507024228543402",
+               "progress_media_time": "1507024249253364",
+               "answered_time": "0",
+               "bridged_time": "0",
+               "last_hold_time": "0",
+               "hold_accum_time": "0",
+               "hangup_time": "1507024250293358",
+               "resurrect_time": "0",
+               "transfer_time": "0"
+           }
+       }
+   ]
+}
