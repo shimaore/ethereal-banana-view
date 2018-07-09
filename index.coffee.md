@@ -26,8 +26,10 @@ Current views
 
     couchapp = (options) ->
       options ?= {}
-      extra = ''
-      extra = "var normalize_account = #{options.normalize_account};" if options.normalize_account?
+      extra = """
+        var normalize_account = #{options.normalize_account ? null};
+        var is_emergency = #{options.is_emergency ? null};
+      """
 
       stats = require('./stats') options
       count = require('./count') options
