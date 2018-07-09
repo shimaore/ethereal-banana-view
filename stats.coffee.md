@@ -36,14 +36,14 @@ By-number
 
         number = variables.ccnq_from_e164
         if number?
-          emit [ number, start_stamp ], billsec # legacy
+          skip [ number, start_stamp ], billsec # legacy
           emit [ {n:number}, parts... ], billsec
           emit [ {n:number,d:direction}, parts... ], billsec
           if billsec is 0
             emit [ {n:number}, 'z', parts... ], waitmsec
         number = variables.ccnq_to_e164
         if number?
-          emit [ number, start_stamp ], billsec # legacy
+          skip [ number, start_stamp ], billsec # legacy
           emit [ {n:number}, parts... ], billsec
           emit [ {n:number,d:direction}, parts... ], billsec
           if billsec is 0
